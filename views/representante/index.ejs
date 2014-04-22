@@ -1,15 +1,26 @@
 <div class="row" ng-controller='HomeCtrl'>
-  <div class="col-lg-4">
-    <h2>Entidades</h2>
-    <div class="list-group" >
-      <a ng-href="#{{entidad.id}}" ng-repeat='entidad in entidades' ng-class='classActive($first) ' class="list-group-item" >{{entidad.nombre}}</a>
+  <div class="col-lg-8">
+    <h2>Estados</h2>
+    <p><input type='text' class='form-control' placeholder='Filtrar' ng-model='entidadFilter' /></p>
+    <div class="btn-group" data-toggle="buttons">
+      <label ng-repeat='entidad in entidades | filter:entidadFilter' class="btn btn-primary">
+        <input type="checkbox" value='{{entidad.id}}'>{{entidad.nombre}}
+      </label>
     </div>
-  </div>
-  <div class="col-lg-4">
+    <hr/>
     <h2>Representantes</h2>
-    <div class='panel'>
-      
+    <div class='row'>
+      <div class='representante panel panel-default col-md-4'>
+        <div class='panel-body'>
+          <img src='http://placehold.it/73x73' class='img-circle img-responsive'/>
+          <h4>Nombre</h4>
+          <p>Diputado</p>
+          <p>Partido</p>
+
+        </div>
+      </div>
     </div>
+
   </div>
   <div class="col-lg-4">
     <h2>Tweets</h2>
