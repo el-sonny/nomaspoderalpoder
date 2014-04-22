@@ -1,3 +1,3 @@
 # contraelsilencio
 
-a [Sails](http://sailsjs.org) application
+a [spaceshiplabs](http://spaceshiplabs.com) open-source application
