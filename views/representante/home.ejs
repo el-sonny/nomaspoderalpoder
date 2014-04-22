@@ -1,0 +1,41 @@
+<div class="row" ng-controller='HomeCtrl'>
+  <div class="col-lg-8">
+    <h2>Estados</h2>
+    <p><input type='text' class='form-control' placeholder='Filtrar' ng-model='entidadFilter' /></p>
+    <div class="btn-group" data-toggle="buttons">
+      <label ng-repeat='entidad in entidades | filter:entidadFilter' class="btn btn-primary">
+        <input type="checkbox" value='{{entidad.id}}'>{{entidad.nombre}}
+      </label>
+    </div>
+    <hr/>
+    <h2>Representantes</h2>
+    <div class='row'>
+      <div class='col-md-4' ng-repeat='rep in representantes | limitTo:30'>
+        <div class='representante panel panel-default' >
+          <div class='panel-body '>
+            <span ng-class='rep.partido' class='label partido'>{{rep.partido}}</span>
+            <img src='http://placehold.it/73x73' class='img-circle img-responsive pull-left'/>
+            <p>
+              <strong>{{ rep.nombre }}</strong><br/>
+              {{ rep.entidad.nombre }}<br/>
+              {{camara(rep.camara)}}<br/>
+            </p>
+            <p class='social-media'>
+              <a href='#'><span class='fa fa-twitter-square'></span></a>
+              <a href='#'><span class='fa fa-facebook-square'></span></a>
+              <a href='#'><span class='fa fa-youtube-square'></span></a>
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-lg-4">
+    <h2>Tweets</h2>
+    <div>
+      
+    </div>
+  </div>
+</div>

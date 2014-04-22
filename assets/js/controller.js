@@ -5,8 +5,14 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 		$scope.entidades = entidades;
 		$scope.$apply();
 	});	
-	$scope.classActive = function(bool){
-		return bool ? 'active' : '';
+	
+	$scope.representantes = [];
+	socket.get('/representante/',{sort:'nombre',limit:1000},function (representantes){
+		$scope.representantes = representantes;
+		$scope.$apply();
+	});	
+	$scope.camara = function(camara){
+		return camara == 'S' ? 'Senado' : 'Congreso';
 	}
 	/*socket.on('mia', function (msg){
 		$scope.mia = msg.data ;
