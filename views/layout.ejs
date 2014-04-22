@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='contraelsilencioAPP'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>#ContraElSilencio APP</title>
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/carousel.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+
+  </head>
+  <body>
+    <%- partial('global/navbar') %>
+    <%- partial('global/carrousel') %>
+    <div class="container marketing">
+      <%- body %>
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p><span class='glyphicon glyphicon-copyright-mark'></span> 2014 spaceshiplabs.com &middot; <a href="#">Aviso de Privacidad</a> &middot;</p>
+      </footer>
+    </div>
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/controller.js"></script>
+    <script src="/js/socketConnect.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>
