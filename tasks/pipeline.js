@@ -16,6 +16,7 @@
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
 	'bower_components/bootstrap/dist/css/bootstrap.min.css',
+	'bower_components/fontawesome/css/font-awesome.min.css',
 	'styles/**/*.css'
 ];
 
@@ -29,7 +30,6 @@ var jsFilesToInject = [
 	'js/dependencies/**/*.js',
 	'bower_components/jquery/dist/jquery.min.js',
 	'bower_components/angular/angular.min.js',
-	'bower_components/bootstrap/dist/js/bootstrap.min.js',
 
 	// All of the rest of your client-side js files
 	// will be injected here in no particular order.

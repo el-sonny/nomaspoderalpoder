@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	index : function(req,res){
+	home : function(req,res){
 		res.view();
 	}
 };
