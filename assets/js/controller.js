@@ -23,14 +23,14 @@ app.controller('HomeCtrl', function ($scope,$sce) {
         return response;
 	}
 	//Seleciona DF
-	$scope.selectedEntidades = {'5356136c9545cc9218aec105':true};
+	$scope.selectedEntidades = {'Distrito Federal':true};
 
 	$scope.filterReps = function () {
 		return function (rep) {
 			//console.log($scope.selectedEntidades);
 		//	console.log($scope.entidades);
 			if(rep.entidad){
-				return $scope.selectedEntidades[rep.entidad.id] === true;
+				return $scope.selectedEntidades[rep.entidad.nombre] === true;
 			}else return false;
 			//return true;
 		}
@@ -47,7 +47,7 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 });
 
 angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
-    .controller('CarouselController', ['$scope', '$timeout', '$transition', '$q', function        ($scope, $timeout, $transition, $q) {
+    .controller('CarouselController', ['$scope', '$timeout', '$transition', '$q', function($scope, $timeout, $transition, $q) {
 }]).directive('carousel', [function() {
     return {
 

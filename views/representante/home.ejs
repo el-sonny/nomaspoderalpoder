@@ -3,10 +3,9 @@
     <h2>Estados</h2>
     <p><input type='text' class='form-control' placeholder='Filtrar' ng-model='entidadFilter' /></p>
     <div class="btn-group">
-      <button ng-repeat='entidad in entidades' type="button" class="btn btn-primary" ng-model="selectedEntidades[entidad.id]" btn-checkbox>{{entidad.nombre}}</button>
-      <!-- <button ng-repeat='entidad in entidades | filter:entidadFilter' type="button" class="btn btn-primary" ng-model="selectedEntidades[entidad.id]" btn-checkbox>
-        
-      </button> -->
+      <button ng-repeat='entidad in entidades' type="button" class="btn btn-primary" ng-model="selectedEntidades[entidad.nombre]" btn-checkbox>
+        {{entidad.nombre}}
+      </button>
     </div>
     <hr/>
     <h2>Representantes</h2>
