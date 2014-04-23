@@ -29,7 +29,9 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 		return function (rep) {
 			//console.log($scope.selectedEntidades);
 		//	console.log($scope.entidades);
-			return $scope.selectedEntidades[rep.entidad.id] === true;
+			if(rep.entidad){
+				return $scope.selectedEntidades[rep.entidad.id] === true;
+			}else return false;
 			//return true;
 		}
 	}
