@@ -3,8 +3,7 @@ module.exports = {
 		require('async');
 		Representante.find({}).exec(function(e,representantes){
 			async.mapSeries(representantes,extractEntidad,function(err,res){
-				if(err){console.log(err); throw err};
-				
+				if(err){console.log(err); throw err};				
 				console.log('entidades creadas: %d',res.length);
 			});
 		});
@@ -12,7 +11,7 @@ module.exports = {
 };
 
 var extractEntidad = function(rep,callback){
-	Entidad.findOrCreate({nombre:rep.entidad},{nombre:rep.entidad},function(e,entidad){
+	Entidad.findOrCreate({nombre:rep.estado},{nombre:rep.estado},function(e,entidad){
 		if(e) return callback(e,entidad);
 		rep.entidad = entidad.id;
 		rep.save(callback);
