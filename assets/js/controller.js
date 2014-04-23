@@ -1,4 +1,4 @@
-var app = angular.module('nomaspoderalpoderAPP', []);
+var app = angular.module('nomaspoderalpoderAPP', ['ui.bootstrap']);
 app.controller('HomeCtrl', function ($scope,$sce) {
 	$scope.entidades = [];
 	$scope.socialNetworks = ['twitter','facebook','youtube'];
@@ -8,7 +8,7 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 	});	
 	
 	$scope.representantes = [];
-	socket.get('/representante/',{sort:'nombre',limit:10},function (representantes){
+	socket.get('/representante/',{sort:'nombre',limit:30},function (representantes){
 		$scope.representantes = representantes;
 		$scope.$apply();
 	});	
@@ -18,14 +18,14 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 	$scope.socialLink = function(rep,network){
         return rep[network] ? rep[network] : false;
 	}
-	$scope.selectedEntidades = [];    
+	$scope.selectedEntidades = {'5356136c9545cc9218aec105':true};
+
 	$scope.filterReps = function () {
 		return function (rep) {
-
-			console.log($scope.selectedEntidades);
+			//console.log($scope.selectedEntidades);
 		//	console.log($scope.entidades);
-			//return $scope.selectedEntidades[rep.entidad.id] === true;
-			return true;
+			return $scope.selectedEntidades[rep.entidad.id] === true;
+			//return true;
 		}
 	}
 
@@ -38,3 +38,11 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 		$scope.$apply();
 	});*/
 });
+
+angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
+    .controller('CarouselController', ['$scope', '$timeout', '$transition', '$q', function        ($scope, $timeout, $transition, $q) {
+}]).directive('carousel', [function() {
+    return {
+
+    }
+}]);

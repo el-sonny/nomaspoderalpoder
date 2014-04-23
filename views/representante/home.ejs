@@ -2,10 +2,11 @@
   <div class="col-lg-8">
     <h2>Estados</h2>
     <p><input type='text' class='form-control' placeholder='Filtrar' ng-model='entidadFilter' /></p>
-    <div class="btn-group entidades" data-toggle="buttons">
-      <label ng-repeat='entidad in entidades | filter:entidadFilter' class="btn btn-primary" >
-        <input type="checkbox" name='entidades[]' value='{{entidad.id}}' ng-model='selectedEntidades[entidad.id]' >{{entidad.nombre}}
-      </label>
+    <div class="btn-group">
+      <button ng-repeat='entidad in entidades' type="button" class="btn btn-primary" ng-model="selectedEntidades[entidad.id]" btn-checkbox>{{entidad.nombre}}</button>
+      <!-- <button ng-repeat='entidad in entidades | filter:entidadFilter' type="button" class="btn btn-primary" ng-model="selectedEntidades[entidad.id]" btn-checkbox>
+        
+      </button> -->
     </div>
     <hr/>
     <h2>Representantes</h2>
@@ -14,7 +15,7 @@
         <div class='representante panel panel-default' >
           <div class='panel-body '>
             <span ng-class='rep.partido' class='label partido'>{{rep.partido}}</span>
-            <img src='http://placehold.it/73x73' class='img-circle img-responsive pull-left'/>
+            <img src='http://placekitten.com/74/74' class='img-circle img-responsive pull-left'/>
             <p>
               <strong>{{ rep.nombre }}</strong><br/>
               {{ rep.entidad.nombre }}<br/>
