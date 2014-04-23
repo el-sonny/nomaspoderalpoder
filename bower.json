@@ -1,6 +1,6 @@
 {
   "name": "contraelsilencio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/el-sonny/nomaspoderalpoder",
   "authors": [
     "sonny <sonny@spaceshiplabs.com>"
@@ -16,8 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.16",
-    "bootstrap": "~3.1.1",
-    "chosen": "~1.1.0"
-  }
+    "angular-bootstrap": "~0.10.0",
+    "fontawesome": "~4.0.3"
+  },
+  "main": "app.js"
 }
