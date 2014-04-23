@@ -8,7 +8,7 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 	});	
 	
 	$scope.representantes = [];
-	socket.get('/representante/',{sort:'nombre',limit:30},function (representantes){
+	socket.get('/representante/',{sort:'nombre',limit:1000},function (representantes){
 		$scope.representantes = representantes;
 		$scope.$apply();
 	});	
@@ -16,8 +16,13 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 		return camara == 'S' ? 'Senado' : 'Congreso';
 	}
 	$scope.socialLink = function(rep,network){
-        return rep[network] ? rep[network] : false;
+		var response = rep[network] ? rep[network] : false;
+		if(response && network == 'twitter'){
+			response = 'https://twitter.com/intent/tweet?screen_name='+rep[network];
+		}
+        return response;
 	}
+	//Seleciona DF
 	$scope.selectedEntidades = {'5356136c9545cc9218aec105':true};
 
 	$scope.filterReps = function () {

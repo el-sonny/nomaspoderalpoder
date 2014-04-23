@@ -22,7 +22,7 @@
               {{camara(rep.camara)}}<br/>
             </p>
             <p class='social-media'>
-              <a ng-repeat='net in socialNetworks' ng-href='{{socialLink(rep,net)}}' ng-hide='socialLink(rep,net)'><span ng-class='"fa-"+net+"-square"' class='fa'></span></a>
+              <a ng-repeat='net in socialNetworks' ng-href='{{socialLink(rep,net)}}' ng-hide='!socialLink(rep,net)'><span ng-class='"fa-"+net+"-square"' class='fa'></span></a>
             </p>
           </div>
         </div>
