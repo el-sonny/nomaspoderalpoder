@@ -23,10 +23,22 @@
     </div>
 
   </div>
-  <div class="col-lg-4">
+  <div class='col-lg-4 tweets'>
     <h2>Tweets</h2>
-    <div>
-      
-    </div>
+        <ul class='list-unstyled'>
+            <li class='text-left' ng-repeat='tweet in tweets' > 
+                <img src='{{tweet.user.profile_image_url}}' class='img-circle img-responsive pull-left'/>
+                <span class='name'>{{tweet.user.name}} </span>
+                <a href='http://twitter.com/{{tweet.user.screen_name}}'>
+                    @{{tweet.user.screen_name}}
+                </a>
+                <a class='small' href="http://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}">
+                    {{tweet.timeString}}
+                </a>
+                
+                <br />
+                {{tweet.text}}
+            </li>
+        </ul>
   </div>
 </div>

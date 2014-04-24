@@ -49,6 +49,20 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 		$scope.mia = msg.data ;
 		$scope.$apply();
 	});*/
+
+	socket.get('/twitter/tweets',function(tweets){
+		for(var i=0;i<tweets.length;i++){
+			tweets[i].timeString = moment(tweets[i].time).lang('es').fromNow();
+		}
+		$scope.tweets = tweets;
+		$scope.$apply();
+		socket.on('newTweet',function(tweet){
+			tweet.timeString = moment(tweet.time).lang('es').fromNow();
+			tweets.unshift(tweet)
+			$scope.$apply();
+		});
+	});
+
 });
 
 angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])

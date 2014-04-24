@@ -34,6 +34,7 @@ var jsFilesToInject = [
 	'bower_components/angular-chosen-localytics/chosen.js',
 	'js/dependencies/chosen.jquery.js',
 	'js/dependencies/**/*.js',
+	'bower_components/moment/min/moment-with-langs.min.js',
 
 	// All of the rest of your client-side js files
 	// will be injected here in no particular order.
