@@ -1,4 +1,4 @@
-var app = angular.module('nomaspoderalpoderAPP', ['ui.bootstrap']);
+var app = angular.module('nomaspoderalpoderAPP', ['ui.bootstrap','ngSanitize']);
 app.controller('HomeCtrl', function ($scope,$sce) {
 	$scope.entidades = [];
 	$scope.socialNetworks = ['twitter','facebook','youtube'];

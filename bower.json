@@ -18,7 +18,8 @@
   "dependencies": {
     "angular-bootstrap": "~0.10.0",
     "fontawesome": "~4.0.3",
-    "moment": "~2.6.0"
+    "moment": "~2.6.0",
+    "angular-sanitize": "~1.2.16"
   },
   "main": "app.js"
 }

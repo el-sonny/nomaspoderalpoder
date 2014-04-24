@@ -31,23 +31,36 @@ function newTweets(data){
 	});
 }
 
-twit.stream('statuses/filter', {track:'nomaspoderalpoder, nomaspoderapp'},function(stream) {
-    stream.on('data', function(data) {
-        if(data.text){
-		data.time = new Date(data.created_at);
-		newTweets(data);
-		tweets.unshift(data);
-		tweets.pop();
+function addData(t,i){
+	if(t.text){
+		t.text = replaceMentions(replaceHashTags(replaceURLWithHTMLLinks(t.text)));
+		t.time = new Date(t.created_at);
+		if(!isFinite(i)){//stream
+			tweets.unshift(t);
+			tweets.pop();
+			newTweets(t);
+		}else{//search
+			tweets.push(t);
+		}	
 	}
-		
-    });
+}
+function replaceURLWithHTMLLinks(text) {
+	var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+	return text.replace(exp,"<a href='$1'>$1</a>"); 
+}
+function replaceHashTags(text) {
+	var exp = /#(\S*)/ig;
+	return text.replace(exp,"<a href='http://twitter.com/#!/search/$1'>#$1</a>"); 
+}
+function replaceMentions(text) {
+	var exp = /@(\w{3,})/ig;
+	return text.replace(exp,"<a href='http://twitter.com/$1'>@$1</a>"); 
+}
+
+twit.stream('statuses/filter', {track:'nomaspoderalpoder, nomaspoderapp'},function(stream) {
+	stream.on('data', addData);
 });
 
-twit.search('#nomaspoderalpoder OR #nomaspoderapp', function(data) {
-    data.statuses.forEach(function(e,i){
-	if(e.text){
-		e.time = new Date(e.created_at);
-		tweets.push(e);
-	}
-    });
+twit.search('#nomaspoderalpoder OR #nomaspoderapp', function(data){
+	data.statuses.forEach(addData);
 });
