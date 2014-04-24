@@ -1,5 +1,7 @@
-var app = angular.module('nomaspoderalpoderAPP', ['ui.bootstrap']);
+var app = angular.module('nomaspoderalpoderAPP', ['ui.bootstrap','localytics.directives']);
+
 app.controller('HomeCtrl', function ($scope,$sce) {
+
 	$scope.entidades = [];
 	$scope.socialNetworks = ['twitter','facebook','youtube'];
 	socket.get('/entidad/',{sort:'nombre'},function (entidades){
@@ -26,12 +28,15 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 	$scope.selectedEntidades = {'Distrito Federal':true};
 
 	$scope.filterReps = function () {
-		return function (rep) {
-			//console.log($scope.selectedEntidades);
-		//	console.log($scope.entidades);
-			if(rep.entidad){
-				return $scope.selectedEntidades[rep.entidad.nombre] === true;
-			}else return false;
+		return function (rep){
+			if($scope.repTextFilter){
+				var index = rep.nombre.toLowerCase().indexOf($scope.repTextFilter.toLowerCase());
+				return index != -1;
+			}else{;
+				if(rep.entidad){
+					return $scope.selectedEntidades[rep.entidad.nombre] === true;
+				}else return false;
+			}	
 			//return true;
 		}
 	}

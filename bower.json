@@ -17,7 +17,8 @@
   ],
   "dependencies": {
     "angular-bootstrap": "~0.10.0",
-    "fontawesome": "~4.0.3"
+    "fontawesome": "~4.0.3",
+    "angular-chosen-localytics": "~1.0.6"
   },
   "main": "app.js"
 }
