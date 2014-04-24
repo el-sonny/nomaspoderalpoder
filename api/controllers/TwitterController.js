@@ -5,15 +5,19 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-var twitter = require('twitter')
-, twit = new twitter({
-      consumer_key: '0Sa9hnn71aOathJ1LeN9ChCvw'
-    , consumer_secret: 'BAX67jaV2RcCqxEbhjIQj2Y8WkKsVEMZ4yRWugSwAOkGsgNveC'
-    , access_token_key: '599751421-kc2t8IfmRXTh8LhSjFIpVRiHY4iz3bGs1HOghbhp'
-    , access_token_secret: 'UzPEQ8HypQBGixE7uYOn85gLiInVZJoiFFMAWyMYxjEUf'
-})
+var config;
+try {
+	config = require('../../config/local.js');
+}catch(e){
+	config={};
+}
+
+
+var twitter = require('twitter') 
+, twit = new twitter(config.twitter_keys)
 , tweets = []
 , clients = [];
+
 module.exports = {
 	tweets : function(req,res){
 		res.json(tweets);	
@@ -57,10 +61,12 @@ function replaceMentions(text) {
 	return text.replace(exp,"<a href='http://twitter.com/$1'>@$1</a>"); 
 }
 
-twit.stream('statuses/filter', {track:'nomaspoderalpoder, nomaspoderapp'},function(stream) {
-	stream.on('data', addData);
+twit.stream('statuses/filter', {track:'nomaspoderalpoder, nomaspoderapp'},function(stream){
+	if(stream)
+		stream.on('data', addData);
 });
 
 twit.search('#nomaspoderalpoder OR #nomaspoderapp', function(data){
-	data.statuses.forEach(addData);
+	if(data && data.statuses)
+		data.statuses.forEach(addData);
 });
