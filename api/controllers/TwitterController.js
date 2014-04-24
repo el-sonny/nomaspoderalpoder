@@ -37,6 +37,7 @@ twit.stream('statuses/filter', {track:'nomaspoderalpoder, nomaspoderapp'},functi
 		data.time = new Date(data.created_at);
 		newTweets(data);
 		tweets.unshift(data);
+		tweets.pop();
 	}
 		
     });
