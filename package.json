@@ -23,7 +23,8 @@
     "grunt-contrib-less": "~0.10.0",
     "grunt-contrib-coffee": "~0.10.1",
     "async": "^0.7.0",
-    "sails-mongo": "^0.10.0-rc3"
+    "sails-mongo": "^0.10.0-rc3",
+    "twitter": "^0.2.9"
   },
   "scripts": {
     "start": "node app.js",

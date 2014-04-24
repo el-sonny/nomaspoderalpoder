@@ -32,6 +32,7 @@ var jsFilesToInject = [
 	//'bower_components/bootstrap/dist/js/bootstrap.min.js',
 	'bower_components/angular/angular.min.js',
 	'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+	'bower_components/moment/min/moment-with-langs.min.js',
 
 	// All of the rest of your client-side js files
 	// will be injected here in no particular order.
