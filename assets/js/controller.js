@@ -51,12 +51,16 @@ app.controller('carouselCtrl', function ($scope,$sce) {
 		{
 			header:'Las leyes secundarias de telecomunicaciones apestan!',
 			content:'<p>No todos podemos ser diputados y senadores pero si podemos presionarlos via:</p><p> <i class="fa fa-twitter"></i><i class="fa fa-facebook"></i><i class="fa fa-youtube-play"></i></p>',
-			button:{text:'Jode a tu diputado',href:'#'}
+			button:{text:'Jode a tu diputado',href:'#'},
+			image:'banner1.jpg'
+
 		},
 		{
 			header:'Las leyes secundarias de telecomunicaciones apestan!',
 			content:'<p>No todos podemos ser diputados y senadores pero si podemos presionarlos via:</p><p> <i class="fa fa-twitter"></i><i class="fa fa-facebook"></i><i class="fa fa-youtube-play"></i></p>',
-			button:{text:'Jode a tu diputado',href:'#'}
+			button:{text:'Jode a tu diputado',href:'#'},
+			image:'banner2.jpg'
+
 		},
 	];
 });
