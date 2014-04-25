@@ -4,8 +4,7 @@
 </script>
 <div class="row" ng-controller='HomeCtrl'>
   <div class="col-lg-8">
-    <h2>Representantes</h2>
-    
+    <h2>Representantes</h2>    
     <div class='col-lg-12'>
       <div class="btn-group">
           <button type="button" class="btn btn-default" ng-model="selectedCamara" btn-radio="'S'">Senadores</button>
@@ -22,7 +21,7 @@
         <div class='representante panel panel-default' >
           <div class='panel-body '>
             <span ng-class='rep.partido' class='label partido'>{{rep.partido}}</span>
-            <img ng-src='{{ rep.twitter_avatar || defaultImg }}' class='img-circle img-responsive pull-left'/>
+            <img ng-src='{{ rep.twitter_avatar || defaultImg }}' class='img-circle img-responsive'/>
             <p>
               <strong>{{ rep.nombre }}</strong><br/>
               {{ rep.entidad.nombre }}<br/>
@@ -38,7 +37,7 @@
 
   </div>
   <div class='col-lg-4 tweets'>
-    <h2>Tweets</h2>
+    <h2><i class="fa fa-twitter"></i> Tweets</h2>
         <ul class='list-unstyled'>
             <li class='text-left clearfix' ng-repeat='tweet in tweets' > 	
                 <img ng-src='{{tweet.user.profile_image_url}}' class='img-circle img-responsive pull-left'/>

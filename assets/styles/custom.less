@@ -1,19 +1,32 @@
-body{font-family:'Raleway';}
+@footer-color: #585858;
+@follow-blue-color : #54ABF5;
+@prd-color: #F8CE00;
+@pri-color:#3F9310;
+
+
+body{font-family:'Raleway';padding-bottom: 0}
 
 .copyleft{transform:rotate(180deg);
 -ms-transform:rotate(180deg);
 -webkit-transform:rotate(180deg); }
 
-.main-navbar{margin-bottom:0;text-align:center;background-color:rgba(0,0,0,.6);position:absolute;z-index:2000;width:100%;padding:8px 0;}
+.main-navbar{margin-bottom:0;text-align:center;background-color:rgba(0,0,0,0.4);position:absolute;z-index:2000;width:100%;padding:8px 0;}
 .main-navbar a{color:white;font-size:60px;font-weight:bold;}
 .main-navbar a:hover{text-decoration: none}
+.carousel .item{background: url(../images/banner.jpg) center no-repeat;background-size: 100% 100%}
 .carousel-indicator{bottom:16px;}
 .carousel-caption{top:80px;}
 .carousel-caption h1{font-size:28px;margin-top:27px;font-weight:700;}
+.carousel-caption{ 
+    .fa{border: 3px solid #fff;width: 58px;font-size: 30px;margin: 0 8px;padding: 10px 0;text-align: center;border-radius: 50%;};
+    .btn-primary{background-color: #CD2F33;border-radius: 0;border: 0;font-size: 18px;font-weight: bold;text-transform: uppercase;}
+}
+.carousel-indicators li{background-color: #fff}
+.carousel-indicators .active{background-color: #CD2F33;border: 0}
 
-.representante{position:relative;height:150px;}
-.representante .panel-body{padding:20px 15px 15px}
-.representante img{margin:0 15px 0 0;}
+.representante{background: #F4F4F4;position:relative;height:200px;margin-top: 6px}
+.representante .panel-body{color: #9C9C9C;padding:20px 15px 15px;text-align: center;}
+.representante img{margin:0 auto 5px;}
 .representante .partido{position:absolute;right:5px;top:3px;}
 .representante .label{opacity:.66;}
 .representante .social-media{position:absolute;right:5px;bottom:-7px;}
@@ -30,10 +43,11 @@ body{font-family:'Raleway';}
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 .col-lg-4.tweets{
-    h2{background-color:#C3C3C3;padding:9px;color:white;};
+    h2{background-color:#CD2F33;padding:9px 0 9px 42px;color:white;font-size: 26px;font-weight: 600;text-align: left;text-transform: uppercase;};
     ul{
         background:#F5F5F5;
         li{
+            border-bottom: 4px solid #fff;
             padding:9px;
             color:#888888;
             .name{color:#878586;font-weight:bold;}
@@ -42,4 +56,10 @@ body{font-family:'Raleway';}
 	    p{margin-left:60px;}
         }
     }
+}
+
+footer{
+    background-color: @footer-color;
+    .container{pading:5px 0;};
+    p,a{color: #a0a0a0!important;margin: 14px 0}
 }
