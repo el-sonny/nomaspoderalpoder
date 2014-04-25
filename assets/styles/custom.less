@@ -21,19 +21,41 @@ body{font-family:'Raleway';padding-bottom: 0}
     .fa{border: 3px solid #fff;width: 58px;font-size: 30px;margin: 0 8px;padding: 10px 0;text-align: center;border-radius: 50%;};
     .btn-primary{background-color: #CD2F33;border-radius: 0;border: 0;font-size: 18px;font-weight: bold;text-transform: uppercase;}
 }
-.carousel-indicators li{background-color: #fff}
-.carousel-indicators .active{background-color: #CD2F33;border: 0}
+.carousel-indicators li{background-color: #fff;}
+.carousel-indicators .active{background-color: #CD2F33;}
+.carousel-indicators li , .carousel-indicators .active{border: 0;height: 14px;margin: 1px 3px;width: 14px}
 
-.representante{background: #F4F4F4;position:relative;height:200px;margin-top: 6px}
+.btn-group{
+    .btn-lg{height: 50px;font-size: 16px}
+    .btn.active,.btn:hover,.btn:focus{background:#A2A2A2;color: #fff};
+    .btn.active span,.btn:hover span,.btn:focus span{background-position: center bottom};
+
+}
+.btn.senado span{display: inline-block;background: url(../images/senado.png) center top no-repeat;height: 30px;width: 19px;vertical-align: middle;}
+.btn.congreso span{display: inline-block;background: url(../images/congreso.png) center top no-repeat;height: 17px;width: 35px;vertical-align: middle;}
+
+h2.ng-binding{color: #9C9C9C;font-size: 28px}
+
+.representante{background: #F4F4F4;position:relative;height:280px;margin-top: 6px}
 .representante .panel-body{color: #9C9C9C;padding:20px 15px 15px;text-align: center;}
-.representante img{margin:0 auto 5px;}
-.representante .partido{position:absolute;right:5px;top:3px;}
-.representante .label{opacity:.66;}
-.representante .social-media{position:absolute;right:5px;bottom:-7px;}
-.representante .social-media a{margin:0 2px;}
-.label.PRI{background-color:#CA1F39}
+.representante .avatar img{}
+.representante .avatar{height: 77px;margin: 0 auto 5px;position: relative;width: 77px;}
+.representante .avatar .partido{border-radius: 50%;font-size: 13px;font-weight: 700;padding: 15px 0;position: absolute;right: -17px;top: -6px;width: 43px;}
+.representante .social-media{bottom: 0;left:0;position: absolute;width: 100%;}
+.representante .social-media a{color: #9C9C9C;margin:0 2px;}
+.representante .social-media a .fa{font-size: 24px;border: 2px solid #9C9C9C;padding: 4px 0;border-radius: 50%;width: 36px}
+.representante .panel-body p{font-size: 13px;line-height: 1.4}
+.representante .panel-body strong{font-size: 15px}
+.representante button{font-weight: 600;margin: 0px 0 12px;width: 85%;
+    webkit-transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -o-transition: background-color .5s;
+    -ms-transition: background-color .5s;
+    transition: background-color .5s;
+}
+.label.PRI{background-color:#3F9310}
 .label.PAN{background-color:#0045AE}
-.label.PRD{background-color:#FFD203}
+.label.PRD{background-color:#F8CE00}
 .label.MC{background-color:#FE5900;}
 .label.PT{background-color:#E10109}
 .label.PVEM{background-color:#A0CF67;}
@@ -62,4 +84,15 @@ footer{
     background-color: @footer-color;
     .container{pading:5px 0;};
     p,a{color: #a0a0a0!important;margin: 14px 0}
+}
+@media all and (max-width: 1200px){
+    .carousel .item{background-size: initial}
+    .btn-group + .pull-right{float:none!important;margin-top: 8px}
+
+}
+
+
+@media all and (max-width: 600px){
+    .main-navbar a{font-size: 36px}
+    .btn-group + .pull-right{float:none!important;margin-top: 8px}
 }

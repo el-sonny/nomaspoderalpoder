@@ -4,31 +4,39 @@
 </script>
 <div class="row" ng-controller='HomeCtrl'>
   <div class="col-lg-8">
-    <h2>Representantes</h2>    
+    <!--<h2>Representantes</h2>-->    
     <div class='col-lg-12'>
       <div class="btn-group">
-          <button type="button" class="btn btn-default" ng-model="selectedCamara" btn-radio="'S'">Senadores</button>
-          <button type="button" class="btn btn-default" ng-model="selectedCamara" btn-radio="'D'">Diputados</button>
+          <button type="button" class="btn btn-lg senado" ng-model="selectedCamara" btn-radio="'S'"><span></span> Senadores</button>
+          <button type="button" class="btn btn-lg congreso" ng-model="selectedCamara" btn-radio="'D'"><span></span> Diputados</button>
       </div>
       
       <div class="pull-right">
         <select name='' class='form-control' ng-model='selectedEntidad' ng-options='e.nombre for e in entidades' ></select>
       </div>
 
+      <h2>{{ camaras[selectedCamara]}} en <strong>{{selectedEntidad.nombre}}</strong></h2>
+
     </div>
     <div class='row'>
       <div class='col-md-4' ng-repeat='rep in representantes | filter:repFilter()'>
         <div class='representante panel panel-default' >
           <div class='panel-body '>
-            <span ng-class='rep.partido' class='label partido'>{{rep.partido}}</span>
-            <img ng-src='{{ rep.twitter_avatar || defaultImg }}' class='img-circle img-responsive'/>
+            <div class="avatar">
+              <img ng-src='{{ rep.twitter_avatar || defaultImg }}' class='img-circle img-responsive'/>
+              <span ng-class='rep.partido' class='label partido'>{{rep.partido}}</span>
+            </div>
             <p>
               <strong>{{ rep.nombre }}</strong><br/>
               {{ rep.entidad.nombre }}<br/>
               {{camara(rep.camara)}}<br/>
             </p>
             <p class='social-media'>
-              <a ng-repeat='net in socialNetworks' ng-href='{{socialLink(rep,net)}}' ng-hide='!socialLink(rep,net)'><span ng-class='"fa-"+net+"-square"' class='fa'></span></a>
+              <button type="button" class="btn btn-default btn-primary"><i class="fa fa-plus"></i> Seguir</button>
+              <a ng-repeat='net in socialNetworks' ng-href='{{socialLink(rep,net)}}' ng-hide='!socialLink(rep,net)'>
+                <!--<span ng-class='"fa-"+net+"-square"' class='fa'></span>-->
+                <i ng-class='"fa-"+net' class="fa"></i>
+              </a>
             </p>
           </div>
         </div>
