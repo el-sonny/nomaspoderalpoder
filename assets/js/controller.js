@@ -7,6 +7,7 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 	$scope.socialNetworks = ['twitter','facebook','youtube'];
 	$scope.selectedCamara = 'S';
 	$scope.selectedEntidad = $scope.entidades[21];
+	$scope.defaultImg = "http://placekitten.com/74/74"
 	$scope.camara = function(camara){
 		return camara == 'S' ? 'Senado' : 'Congreso';
 	}
