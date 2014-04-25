@@ -93,7 +93,7 @@ module.exports.blueprints = {
    * `rest` blueprints are enabled by default, and are suitable for a production scenario,
    * as long you take standard security precautions (combine w/ policies, etc.)
    */
-  rest: true,
+  rest: false,
 
 
   /**
@@ -105,7 +105,7 @@ module.exports.blueprints = {
    *
    * `shortcuts` are enabled by default, but SHOULD BE DISABLED IN PRODUCTION!!!!!
    */
-  shortcuts: true,
+  shortcuts: false,
 
 
 
