@@ -9,23 +9,29 @@ module.exports = {
 		});
 	}
 	, getAvatars: function(){
-		var  twitter = require('twitter') 
-		, twit = new twitter(sails.config.twitter_keys)
+		var self = this
+		,  twitter = require('twitter')
+		, twit = new twitter(sails.config.twitter_keys);
+
 		Representante.find().exec(function(err,rep){
 			rep.forEach(function(e,i){
 				if(e.twitter && !e['twitter_avatar'] ){
 					twit.get('/users/show.json',{screen_name:e.twitter},function(data){
-						console.log('response from %s',e.twitter,data);
-						if(data && data.profile_image_url)
+						if(data && data.profile_image_url){
+							var img = data.profile_image_url.replace('_normal','_bigger');
 							Representante.update({id:e.id}
 							,{
-								twitter_avatar:data.profile_image_url
+								twitter_avatar:img
 							}
 							, function(err){
 								if(err) console.log(err);
 								console.log("update avatar %s",e.nombre);
 							});
-					});				
+						}else{
+							console.log('response:',data.statusCode);
+						}
+
+					});	
 				}
 			});
 
