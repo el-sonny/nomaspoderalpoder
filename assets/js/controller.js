@@ -5,7 +5,8 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 	$scope.entidades = entidades;
 	$scope.representantes = representantes;
 	$scope.socialNetworks = ['twitter','facebook','youtube'];
-	
+	$scope.selectedCamara = 'S';
+	$scope.selectedEntidad = $scope.entidades[21];
 	$scope.camara = function(camara){
 		return camara == 'S' ? 'Senado' : 'Congreso';
 	}
@@ -18,9 +19,10 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 	}
 	
 
-	$scope.entidadFilter = function () {
+	$scope.repFilter = function () {
 		return function(rep){
-			return !$scope.selectedEntidad || $scope.selectedEntidad.id == rep.entidad.id;
+			return (!$scope.selectedEntidad || $scope.selectedEntidad.id == rep.entidad.id)
+			&& $scope.selectedCamara == rep.camara;
 		};
 	}
 
