@@ -22,7 +22,7 @@ module.exports = {
 	tweets : function(req,res){
 		res.json(tweets);	
 		req.socket.on('disconnect',function(){
-			clients.splice(req.socket,1)
+			clients.splice(clients.indexOf(req.socket),1)
 		});
 
 		clients.push(req.socket);
