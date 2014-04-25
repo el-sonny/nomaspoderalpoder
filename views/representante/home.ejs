@@ -31,7 +31,7 @@
     <h2>Tweets</h2>
         <ul class='list-unstyled'>
             <li class='text-left clearfix' ng-repeat='tweet in tweets' > 	
-                <img src='{{tweet.user.profile_image_url}}' class='img-circle img-responsive pull-left'/>
+                <img ng-src='{{tweet.user.profile_image_url}}' class='img-circle img-responsive pull-left'/>
                 <span class='name'>{{tweet.user.name}} </span>
                 <a href='http://twitter.com/{{tweet.user.screen_name}}'>
                     @{{tweet.user.screen_name}}

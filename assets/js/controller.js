@@ -33,6 +33,7 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 		socket.on('newTweet',function(tweet){
 			tweet.timeString = moment(tweet.time).lang('es').fromNow();
 			tweets.unshift(tweet)
+			tweets.pop();
 			$scope.$apply();
 		});
 	});
