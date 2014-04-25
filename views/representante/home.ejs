@@ -1,10 +1,14 @@
+<script type='text/javascript'>
+    window.entidades = <%- JSON.stringify(entidades) %>;
+    window.representantes = <%- JSON.stringify(representantes) %>;
+</script>
 <div class="row" ng-controller='HomeCtrl'>
   <div class="col-lg-8">
     <h2>Representantes</h2>
     <%- partial('rep-nav') %> 
     <!-- <p><input type='text' class='form-control' placeholder='Buscar por Nombre' ng-model='repTextFilter' /></p> -->
     <div class='row'>
-      <div class='col-md-4' ng-repeat='rep in representantes | filter:filterReps()'>
+      <div class='col-md-4' ng-repeat='rep in representantes | filter:entidadFilter()'>
         <div class='representante panel panel-default' >
           <div class='panel-body '>
             <span ng-class='rep.partido' class='label partido'>{{rep.partido}}</span>

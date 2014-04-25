@@ -2,18 +2,10 @@ var app = angular.module('nomaspoderalpoderAPP', ['ui.bootstrap','localytics.dir
 
 app.controller('HomeCtrl', function ($scope,$sce) {
 
-	$scope.entidades = [];
+	$scope.entidades = entidades;
+	$scope.representantes = representantes;
 	$scope.socialNetworks = ['twitter','facebook','youtube'];
-	socket.get('/entidad/',{sort:'nombre'},function (entidades){
-		$scope.entidades = entidades;
-		$scope.$apply();
-	});	
 	
-	$scope.representantes = [];
-	socket.get('/representante/',{sort:'nombre',limit:1000},function (representantes){
-		$scope.representantes = representantes;
-		$scope.$apply();
-	});	
 	$scope.camara = function(camara){
 		return camara == 'S' ? 'Senado' : 'Congreso';
 	}
@@ -24,31 +16,13 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 		}
         return response;
 	}
-	//Seleciona DF
-	$scope.selectedEntidades = {'Distrito Federal':true};
+	
 
-	$scope.filterReps = function () {
-		return function (rep){
-			if($scope.repTextFilter){
-				var index = rep.nombre.toLowerCase().indexOf($scope.repTextFilter.toLowerCase());
-				return index != -1;
-			}else{;
-				if(rep.entidad){
-					return $scope.selectedEntidades[rep.entidad.nombre] === true;
-				}else return false;
-			}	
-			//return true;
-		}
+	$scope.entidadFilter = function () {
+		return function(rep){
+			return !$scope.selectedEntidad || $scope.selectedEntidad.id == rep.entidad.id;
+		};
 	}
-
-	$(document).on('click','.entidades label',function(e){
-		$(this).children().prop('checked',true);
-		$scope.$apply();
-	});
-	/*socket.on('mia', function (msg){
-		$scope.mia = msg.data ;
-		$scope.$apply();
-	});*/
 
 	socket.get('/twitter/tweets',function(tweets){
 		for(var i=0;i<tweets.length;i++){
