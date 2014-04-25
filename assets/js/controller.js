@@ -28,6 +28,8 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 		};
 	}
 
+	$scope.camaras = {D:'Diputados',S:'Senadores'};
+
 	socket.get('/twitter/tweets',function(tweets){
 		for(var i=0;i<tweets.length;i++){
 			tweets[i].timeString = moment(tweets[i].time).lang('es').fromNow();
