@@ -7,7 +7,8 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 	$scope.socialNetworks = ['twitter','facebook','youtube'];
 	$scope.selectedCamara = 'S';
 	$scope.selectedEntidad = $scope.entidades[21];
-	
+	$scope.defaultImg = "http://placekitten.com/74/74"
+
 	$scope.camara = function(camara){
 		return camara == 'S' ? 'Senado' : 'Congreso';
 	}
@@ -46,12 +47,12 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 app.controller('carouselCtrl', function ($scope,$sce) {
 	$scope.slides = [
 		{
-			header:'Las leyes secundarias apestan',
+			header:'Las leyes secundarias de telecomunicaciones apestan!',
 			content:'<p>No todos podemos ser diputados y senadores pero si podemos presionarlos via <code>twitter / facebook / youtube</code></p>',
 			button:{text:'jode a tu diputado',href:'#'}
 		},
 		{
-			header:'Las leyes secundarias apestan',
+			header:'Las leyes secundarias de telecomunicaciones apestan!',
 			content:'<p>No todos podemos ser diputados y senadores pero si podemos presionarlos via <code>twitter / facebook / youtube</code></p>',
 			button:{text:'jode a tu diputado',href:'#'}
 		},
