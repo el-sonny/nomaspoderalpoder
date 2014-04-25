@@ -7,13 +7,14 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 	$scope.socialNetworks = ['twitter','facebook','youtube'];
 	$scope.selectedCamara = 'S';
 	$scope.selectedEntidad = $scope.entidades[21];
+	
 	$scope.camara = function(camara){
 		return camara == 'S' ? 'Senado' : 'Congreso';
 	}
 	$scope.socialLink = function(rep,network){
 		var response = rep[network] ? rep[network] : false;
 		if(response && network == 'twitter'){
-			response = 'https://twitter.com/intent/tweet?screen_name='+rep[network];
+			carouselCtrlresponse = 'https://twitter.com/intent/tweet?screen_name='+rep[network];
 		}
         return response;
 	}
@@ -42,10 +43,26 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 
 });
 
-angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
+app.controller('carouselCtrl', function ($scope,$sce) {
+	$scope.slides = [
+		{
+			header:'Las leyes secundarias apestan',
+			content:'<p>No todos podemos ser diputados y senadores pero si podemos presionarlos via <code>twitter / facebook / youtube</code></p>',
+			button:{text:'jode a tu diputado',href:'#'}
+		},
+		{
+			header:'Las leyes secundarias apestan',
+			content:'<p>No todos podemos ser diputados y senadores pero si podemos presionarlos via <code>twitter / facebook / youtube</code></p>',
+			button:{text:'jode a tu diputado',href:'#'}
+		},
+	];
+});
+
+
+/*angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
     .controller('CarouselController', ['$scope', '$timeout', '$transition', '$q', function($scope, $timeout, $transition, $q) {
 }]).directive('carousel', [function() {
     return {
 
     }
-}]);
+}]);*/

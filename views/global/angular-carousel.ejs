@@ -1,0 +1,12 @@
+<div ng-controller='carouselCtrl'>
+	<carousel interval="myInterval">
+		<slide ng-repeat="slide in slides" active="slide.active">
+			<img ng-src="{{slide.image}}" style="margin:auto;">
+			<div class="carousel-caption">
+				<h1>{{slide.header}}</h1>
+				<div ng-bind-html='slide.content'></div>
+				<p><a class="btn btn-lg btn-primary" ng-href="slide.button.href" role="button">{{slide.button.text}}</a></p>
+			</div>
+		</slide>
+	</carousel>
+</div>
