@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
 	extractEntidades : function(){
 		require('async');
 		Representante.find({}).exec(function(e,representantes){
@@ -46,3 +46,4 @@ var extractEntidad = function(rep,callback){
 		rep.save(callback);
 	})
 }
+*/

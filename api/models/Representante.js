@@ -9,7 +9,8 @@ module.exports = {
 	attributes: {
 		entidad : {
 			model : 'entidad',
-		}		
-	}
+		}	
+	},
+	migrate : 'safe',
 };
 

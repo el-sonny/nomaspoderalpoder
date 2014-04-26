@@ -10,6 +10,7 @@ module.exports = {
   attributes: {
   	nombre : 'string',
   	
-  }
+  },  
+	migrate : 'safe',
 };
 
