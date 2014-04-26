@@ -60,14 +60,15 @@ app.controller('carouselCtrl', function ($scope,$sce) {
 			content:'<p>¿Por qué quienes deberían representarnos actúan de ese modo? ¡Es hora de que los ciudadanos seamos escuchados!</p>'+
 			'<p>Esta plataforma es una herramienta para que vía redes sociales exijas a los congresistas mexicanos, desechar la iniciativa presidencial de Ley de Telecomunicaciones y Radiodifusión y elaborar una nueva en beneficio de la sociedad y contra de los monopolios.</p>'+
 			'<p>Encuentra por estado a tu senador y diputado.</p>',
-			button:{text:'Busca tu Representante',href:'#representantes'},
+			button:{text:'Busca tu Representante',href:'/#representantes'},
 			image:'banner1.jpg'
 
 		},
 		{
-			header:'Las leyes secundarias de telecomunicaciones apestan!',
-			content:'<p>No todos podemos ser diputados y senadores pero si podemos presionarlos via:</p><p class="social-icons"> <a href="#tw"><i class="fa fa-twitter"></i></a><a href="#fb"><i class="fa fa-facebook"></i></a><a href="#yt"><i class="fa fa-youtube-play"></i></a></p>',
-			button:{text:'Jode a tu diputado',href:'#'},
+			header:'No solo la propuestas al internet estan mal.',
+			content:'<p>La iniciativa presidencial de Ley de Telecomunicaciones contiene puntos "inconstitucionales, incongruentes o que contravienen el interés público"</p>'+
+			'<p>Te recomendamos leer el analisis de la Investigadora Clara Luz Alvarez donde enlista muchos de estos puntos</p>',
+			button:{text:'Lee el analisis',href:'/analisis#analisis'},
 			image:'banner2.jpg'
 
 		},

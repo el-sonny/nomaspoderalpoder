@@ -12,5 +12,5 @@ module.exports = {
 				res.view({entidades:entidades,representantes:representantes});
 			})
 		});		
-	}
+	},
 };

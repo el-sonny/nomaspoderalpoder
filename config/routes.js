@@ -30,8 +30,9 @@ module.exports.routes = {
     controller: 'representante',
     action : 'home'
   },
-
-
+  '/analisis': {
+    view: 'analisis/claraluz',
+  },
   // Custom routes here...
 
 
