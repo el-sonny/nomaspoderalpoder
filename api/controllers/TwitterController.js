@@ -67,6 +67,7 @@ twit.stream('statuses/filter', {track:'nomaspoderalpoder, nomaspoderapp'},functi
 });
 
 twit.search('#nomaspoderalpoder OR #Nomaspoderapp',{count:7}, function(data){
+	//console.log(data);
 	if(data && data.statuses)
 		data.statuses.forEach(addData);
 });
