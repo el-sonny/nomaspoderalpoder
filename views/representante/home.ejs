@@ -2,6 +2,7 @@
     window.entidades = <%- JSON.stringify(entidades) %>;
     window.representantes = <%- JSON.stringify(representantes) %>;
 </script>
+<a name='representantes'></a>
 <div class="row" ng-controller='HomeCtrl'>
   <div class="col-lg-8">
     <!--<h2>Representantes</h2>-->    
@@ -32,8 +33,17 @@
               {{camara(rep.camara)}}<br/>
             </p>
             <p class='social-media'>
-              <button type="button" class="btn btn-default btn-primary bgTransition"><i class="fa fa-plus"></i> Seguir</button>
-              <a ng-repeat='net in socialNetworks' ng-href='{{socialLink(rep,net)}}' ng-hide='!socialLink(rep,net)'>
+              <a 
+                  type="button" 
+                  class="button btn btn-default btn-primary bgTransition" 
+                  ng-href='{{tweetlink(rep)}}' 
+                  ng-hide='!tweetlink(rep)'
+                  target="_blank"
+                  ng-click='reportTweet(rep)'
+              >
+                <i class="fa fa-comment"></i> Tuiteale
+              </a>
+              <a class='link' ng-repeat='net in socialNetworks' ng-href='{{socialLink(rep,net)}}' ng-hide='!socialLink(rep,net)' target="_blank">
                 <!--<span ng-class='"fa-"+net+"-square"' class='fa'></span>-->
                 <i ng-class='"fa-"+net' class="fa"></i>
               </a>

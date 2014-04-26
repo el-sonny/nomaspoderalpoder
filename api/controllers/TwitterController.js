@@ -50,15 +50,15 @@ function addData(t,i){
 }
 function replaceURLWithHTMLLinks(text) {
 	var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-	return text.replace(exp,"<a href='$1'>$1</a>"); 
+	return text.replace(exp,"<a href='$1' target='_blank'>$1</a>"); 
 }
 function replaceHashTags(text) {
 	var exp = /#(\S*)/ig;
-	return text.replace(exp,"<a href='http://twitter.com/#!/search/$1'>#$1</a>"); 
+	return text.replace(exp,"<a href='http://twitter.com/#!/search/$1'  target='_blank' >#$1</a>"); 
 }
 function replaceMentions(text) {
 	var exp = /@(\w{3,})/ig;
-	return text.replace(exp,"<a href='http://twitter.com/$1'>@$1</a>"); 
+	return text.replace(exp,"<a href='http://twitter.com/$1'  target='_blank' >@$1</a>"); 
 }
 
 twit.stream('statuses/filter', {track:'nomaspoderalpoder, nomaspoderapp'},function(stream){

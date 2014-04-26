@@ -11,11 +11,12 @@
     <meta property="og:title" content="#Nomaspoderapp" />
     <meta name="description" content="Las leyes secundarias de telecomunicaciones apestan!. No todos podemos ser diputados y senadores pero si podemos presionarlos">
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://projects.spaceshiplabs.com:1339/" />
+    <meta property="og:url" content="http://nomaspoder.mx/" />
     <meta property="og:image" content="/images/face.jpg" />
 
-    <title>#Nomaspoderalpoder app</title>
-
+    <title>#Nomáspoderapp</title>
+    
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
     <!--STYLES-->
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bower_components/fontawesome/css/font-awesome.min.css">
@@ -28,13 +29,18 @@
   <body>
     <%- partial('global/navbar') %>
     <%- partial('global/angular-carousel') %>
-    <div class="container marketing">
-      <%- body %>
-    </div>
+
+    <div class="container marketing"><%- body %></div>
+    
     <footer>
         <div class="container">
-            <p class="pull-right"><a href="#">Back to top</a></p>
-            <p>&copy;<!--<span class='glyphicon glyphicon-copyright-mark copyleft'></span>--> 2014 spaceshiplabs.com &middot;<a href="#">Aviso de Privacidad</a> &middot; <a href="https://github.com/el-sonny/nomaspoderalpoder">Github</a> &middot; <a href="#">API</a></p>            
+            <p class="pull-right"><a href="#">Regresar al principio</a></p>
+            <p>
+                <a class='glyphicon glyphicon-copyright-mark copyleft' href='https://github.com/el-sonny/nomaspoderalpoder'></a>
+                2014 
+                <a href='http://spaceshiplabs.com'>spaceshiplabs.com</a> &middot; 
+                <a href="https://github.com/el-sonny/nomaspoderalpoder">Github</a>
+            </p>            
         </div>
     </footer>
     <!--SCRIPTS-->
@@ -43,11 +49,12 @@
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="/bower_components/angular-chosen-localytics/chosen.js"></script>
     <script src="/js/dependencies/chosen.jquery.js"></script>
-    <script src="/js/dependencies/sails.io.js"></script>
     <script src="/bower_components/moment/min/moment-with-langs.min.js"></script>
     <script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/js/dependencies/sails.io.js"></script>
     <script src="/js/controller.js"></script>
     <script src="/js/socketConnect.js"></script>
     <!--SCRIPTS END-->
+    <%- partial('global/analytics') %>
   </body>
 </html>
