@@ -25,24 +25,19 @@ body{font-family:'Raleway';padding-bottom: 0}
 
 .carousel-indicator{bottom:16px;}
 .carousel-caption{top:80px;}
-.carousel-caption h1{font-size:28px;margin-top:27px;font-weight:700;}
+.carousel-caption h1{margin-top:27px;font-weight:700;}
 .carousel-caption{ 
+    p{font-size:19px;}
     .social-icons a{width: 58px;display: inline-block;color: #fff;margin: 0 8px;}    
     .fa{border: 3px solid #fff;width: 58px;font-size: 30px;padding: 10px 0;text-align: center;border-radius: 50%;};
     .btn-primary{background-color: #CD2F33;border-radius: 0;border: 0;font-size: 18px;font-weight: bold;text-transform: uppercase;}
     .btn-primary:hover{background-color: #a42529}
+
 }
 .carousel-indicators li{background-color: #fff;}
 .carousel-indicators .active{background-color: #CD2F33;}
 .carousel-indicators li , .carousel-indicators .active{border: 0;height: 14px;margin: 1px 3px;width: 14px}
 
-@media (max-width: 600px) {
-  .carousel-caption{top:26px;}
-  .carousel-caption h1{font-size:20px;}
-  .carousel-caption p{font-size:14px;}
-  .carousel-indicators{bottom:3px;}
-
-}
 
 
 
@@ -94,24 +89,37 @@ h2.ng-binding{color: #9C9C9C;font-size: 28px}
         }
     }
 }
-
 footer{
     background-color: @footer-color;
     .container{pading:5px 0;};
     p,a{color: #a0a0a0!important;margin: 14px 0}
 }
+
 @media all and (max-width: 1200px){
     .btn-group + .pull-right{float:none!important;margin-top: 8px}
 
 }
+@media all and (max-width: 1010px) {
+    .carousel-caption h1{font-size:30px;}
+}
+@media all and (max-width: 767px) {
+    .carousel-caption p{font-size:19px;}
+}
 
 
-@media all and (max-width: 600px){
+@media all and (max-width: 640px){
     .main-navbar a{font-size: 36px}
     .btn-group + .pull-right{float:none!important;margin-top: 8px}
     .btn-group .btn-lg{padding: 10px}
+    .carousel-caption{top:26px;}
+    .carousel-caption h1{font-size:20px;}
+    .carousel-caption p{font-size:19px;}
+    .carousel-indicators{bottom:3px;}
+    .carousel-caption .btn-primary {font-size:14px;}
 }
 
 @media all and (max-width: 460px){
-    .carousel-indicators{bottom: -12px}
+    .carousel-indicators{bottom: 0px}
+    .carousel-caption p{font-size:15px;}
 }
+

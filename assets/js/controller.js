@@ -57,7 +57,7 @@ app.controller('carouselCtrl', function ($scope,$sce) {
 	$scope.slides = [
 		{
 			header:'El Congreso de la Unión, legisla no sólo a espaldas de nosotros, sino en nuestra contra.',
-			content:'<p>¿Por qué quienes deberían representarnos actúan de ese modo?</p> <p>¡Es hora de que los ciudadanos seamos escuchados!</p><p> Encuentra por estado a tus senadores y diputados.</p>',
+			content:'<p>¿Por qué quienes deberían representarnos actúan de ese modo?<br/>¡Es hora de que los ciudadanos seamos escuchados!',
 			//'<p></p>'+
 			//'<p></p>',
 			button:{text:'Exígele a tus representantes',href:'/#representantes'},
