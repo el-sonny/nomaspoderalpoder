@@ -17,6 +17,7 @@
 var cssFilesToInject = [
 	'bower_components/bootstrap/dist/css/bootstrap.min.css',
 	//'bower_components/fontawesome/css/font-awesome.min.css',
+	'bower_components/footable/css/footable.core.min.css',
 	'styles/**/*.css'
 ];
 
@@ -36,6 +37,7 @@ var jsFilesToInject = [
 	'bower_components/moment/min/moment-with-langs.min.js',
 	'bower_components/angular-sanitize/angular-sanitize.min.js',
 	'js/dependencies/**/*.js',
+	'bower_components/footable/js/footable.js',
 
 	// All of the rest of your client-side js files
 	// will be injected here in no particular order.

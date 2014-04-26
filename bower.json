@@ -20,7 +20,8 @@
     "fontawesome": "~4.0.3",
     "angular-sanitize": "~1.2.16",
     "angular-chosen-localytics": "~1.0.6",
-    "moment": "~2.6.0"
+    "moment": "~2.6.0",
+    "footable": "~2.0.1"
   },
   "main": "app.js"
 }
