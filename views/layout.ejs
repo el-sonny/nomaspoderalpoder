@@ -17,9 +17,15 @@
     <title>#Nomáspoderapp | Exígele a tus Diputados y Senadores. Encuéntralos aquí.</title>
     
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">-->
+    <link href="/min/font-awesome.min.css" rel="stylesheet">
+
     <!--STYLES-->
-    <link rel="stylesheet" href="/min/production.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/footable/css/footable.core.min.css">
+    <link rel="stylesheet" href="/styles/carousel.css">
+    <link rel="stylesheet" href="/styles/chosen.css">
+    <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
 
   </head>
@@ -41,7 +47,17 @@
         </div>
     </footer>
     <!--SCRIPTS-->
-    <script src="/min/production.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-chosen-localytics/chosen.js"></script>
+    <script src="/js/dependencies/chosen.jquery.js"></script>
+    <script src="/bower_components/moment/min/moment-with-langs.min.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/bower_components/footable/js/footable.js"></script>
+    <script src="/js/controller.js"></script>
+    <script src="/js/socketConnect.js"></script>
     <!--SCRIPTS END-->
     <%- partial('global/analytics') %>
   </body>
