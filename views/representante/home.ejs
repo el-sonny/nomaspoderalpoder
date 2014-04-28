@@ -26,7 +26,7 @@
 
     </div>
     <div class='row'>
-      <div class='col-md-4' ng-repeat='rep in representantes | filter:repFilter()'>
+      <div class='col-md-4' ng-repeat='rep in filteredReps = (representantes | filter:repFilter())'>
         <div class='representante panel panel-default' >
           <div class='panel-body '>
             <div class="avatar">
@@ -41,16 +41,15 @@
             <p class='social-media'>
               <a 
                   type="button" 
-                  class="button btn btn-default btn-primary bgTransition" 
+                  class="button btn btn-default btn-primary btn-blue bgTransition" 
                   ng-href='{{tweetlink(rep)}}' 
                   ng-hide='!tweetlink(rep)'
                   target="_blank"
                   ng-click='reportTweet(rep)'
               >
-                <i class="fa fa-comment"></i> Tuiteale
+                <i class="fa fa-comment"></i> Tuitéale
               </a>
               <a class='link' ng-repeat='net in socialNetworks' ng-href='{{socialLink(rep,net)}}' ng-hide='!socialLink(rep,net)' target="_blank">
-                <!--<span ng-class='"fa-"+net+"-square"' class='fa'></span>-->
                 <i ng-class='"fa-"+net' class="fa"></i>
               </a>
             </p>
@@ -61,6 +60,18 @@
 
   </div>
   <div class='col-lg-4 tweets'>
+
+    <h2><i class='fa fa-comment'></i> Tu Tweet</h2>
+    <textarea class='form-control' rows='3' ng-model='tweetMessage'></textarea>
+    <br/>
+    <p class='text-center'>
+      <a href='' type='button' class='btn btn-blue btn-primary massTweet' ng-click='massTweet()' popover="Envia tu tuit a los {{camaras[selectedCamara]}} de {{selectedEntidad.nombre}}. Se abriran {{filteredReps.length}} ventanas de twitter." popover-trigger="mouseenter" >
+        Tuitéalo
+        <span class='badge pull-right'>{{tweetChars()}}</span>
+      </a>
+    </p>
+    <hr class='clearfix'/>
+
     <h2><i class="fa fa-twitter"></i> Tweets</h2>
         <ul class='list-unstyled'>
             <li class='text-left clearfix' ng-repeat='tweet in tweets' > 	
@@ -73,7 +84,7 @@
                     {{tweet.timeString}}
                 </a>
                 <br />
-		<p  ng-bind-html='tweet.text' ></p>
+		            <p  ng-bind-html='tweet.text' ></p>
             </li>
         </ul>
   </div>

@@ -1,6 +1,6 @@
 var app = angular.module('nomaspoderalpoderAPP', ['ui.bootstrap','localytics.directives','ngSanitize']);
 
-app.controller('HomeCtrl', function ($scope,$sce) {
+app.controller('HomeCtrl', function ($scope,$sce,$window) {
 
 	$scope.entidades = entidades;
 	$scope.representantes = representantes;
@@ -8,21 +8,43 @@ app.controller('HomeCtrl', function ($scope,$sce) {
 	$scope.selectedCamara = 'S';
 	$scope.selectedEntidad = $scope.entidades[8];
 	$scope.defaultImg = 'http://placehold.it/73x73&text=++';
-
+	$scope.tweetMessage = 'exigimos se deseche la iniciativa pres. de ley de telecom. y se consensúe una nueva con la sociedad';
 	$scope.camara = function(camara){
 		return camara == 'S' ? 'Senado' : 'Congreso';
 	}
 	$scope.tweetlink = function(rep){
 		var camaras = {'S':'Senador','D':'Diputado'};
-		var text	= 'exigimos se deseche la iniciativa pres. de ley de telecom. y se consensúe una nueva con la sociedad'; 
-		return rep.twitter ? 'https://twitter.com/intent/tweet/?text='+text+'&hashtags=Nomáspoderapp&screen_name='+rep.twitter : false;
+		return rep.twitter ? 'https://twitter.com/intent/tweet/?text='+$scope.tweetMessage+'&screen_name='+rep.twitter+'&hashtags=Nomáspoderapp' : false;
 	}
 	$scope.socialLink = function(rep,network){
 		var prefixes = {'twitter':'https://twitter.com/#!','facebook':'http://www.facebook.com/','youtube':'http://www.youtube.com/user/'};
 		var response = rep[network] ? prefixes[network]+rep[network] : false;
         return response;
 	}
-	
+	$scope.tweetChars = function(){
+		return 110 - $scope.tweetMessage.length;
+	}
+	$scope.avgLength = function(){
+		var sum = 0;
+		var length = 0;
+		$scope.representantes.forEach(function(rep){
+			if(rep.twitter){
+				sum += rep.twitter.length;
+				length++;
+			}
+		});
+		return sum/length;
+	}
+
+	$scope.massTweet = function(){
+		$scope.filteredReps.forEach(function(rep){
+			if(rep.twitter){
+				console.log('open window');
+				$window.open($scope.tweetlink(rep));
+			}
+		});
+		ga('send', 'event', 'button', 'massTweet', $scope.selectedEntidad.nombre+' '+$scope.camaras[$scope.selectedCamara]);
+	}	
 
 	$scope.repFilter = function () {
 		return function(rep){
