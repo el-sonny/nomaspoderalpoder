@@ -20,10 +20,10 @@ module.exports.express = {
 
 	// Override one or more of the default middleware (besides bodyParser, cookieParser)
 	// 
-	 middleware: {
+	 /*middleware: {
 	    session: false, // turn off session completely for HTTP requests
 	//    404: function ( req, res, next ) { ... your custom 404 middleware ... }
-	 },
+	 },*/
 
 
 
