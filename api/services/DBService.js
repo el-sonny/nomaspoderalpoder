@@ -13,9 +13,10 @@
 		,  twitter = require('twitter')
 		, twit = new twitter(sails.config.twitter_keys);
 
-		Representante.find().exec(function(err,rep){
+		Representante.find({id:'535ac537c373753cc3adcee5'}).exec(function(err,rep){
 			rep.forEach(function(e,i){
-				if(e.twitter && !e['twitter_avatar'] ){
+
+				if(e.twitter){
 					twit.get('/users/show.json',{screen_name:e.twitter},function(data){
 						if(data && data.profile_image_url){
 							var img = data.profile_image_url.replace('_normal','_bigger');

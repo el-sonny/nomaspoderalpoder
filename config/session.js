@@ -43,17 +43,15 @@ module.exports.session = {
 
 
   // Uncomment the following lines to use your Mongo adapter as a session store
-   adapter: 'mongo',
-  //
-   //host: 'localhost',
-   //port: 27017,
-   db: 'contraelsilencio',
-   collection: 'sessions',
+  adapter: 'mongo',
+  host: 'localhost',
+  port: 27017,
+  db: 'contraelsilencio',
+  collection: 'sessions',
+  url: process.env.MONGO_HOST,
+  
   //
   // Optional Values:
-  //
-  // # Note: url will override other connection settings
-  // url: 'mongodb://user:pass@host:port/database/collection',
   //
   // username: '',
   // password: '',

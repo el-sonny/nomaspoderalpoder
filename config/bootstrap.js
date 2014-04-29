@@ -10,6 +10,11 @@
 
 module.exports.bootstrap = function (cb) {
 
+	/*esto no funciona
+	if (process.env.NODE_ENV == 'development') {
+		process.env.MONGO_HOST = 'mongodb://localhost:27017'
+		process.env.APP_PORT = '1339';
+	}*/
   // It's very important to trigger this callack method when you are finished 
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();
