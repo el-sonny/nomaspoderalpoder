@@ -25,7 +25,9 @@
     "async": "^0.7.0",
     "sails-mongo": "^0.10.0-rc3",
     "twitter": "^0.2.9",
-    "sails-redis": "^0.9.3"
+    "sails-redis": "^0.9.3",
+    "passport": "^0.2.0",
+    "passport-twitter": "^1.0.2"
   },
   "scripts": {
     "start": "node app.js",
