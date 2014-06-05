@@ -1,11 +1,11 @@
 var twitter = require('twitter');
 
 module.exports.init = function(){
-	loadAllInDB();
+	//loadAllInDB();
 	setInterval(function(){
-		loadAllInDB();
+		//loadAllInDB();
 	},1200000);//reload all 20 m
-}
+};
 
 function loadAllInDB(){
 	Tweet.find().exec(function(err,tweet){

@@ -27,7 +27,8 @@
     "twitter": "^0.2.9",
     "sails-redis": "^0.9.3",
     "passport": "^0.2.0",
-    "passport-twitter": "^1.0.2"
+    "passport-twitter": "^1.0.2",
+    "cron": "^1.0.4"
   },
   "scripts": {
     "start": "node app.js",
