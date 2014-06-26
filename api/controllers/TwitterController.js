@@ -95,13 +95,13 @@ function replaceMentions(text) {
 	return text.replace(exp,"<a href='http://twitter.com/$1'  target='_blank' >@$1</a>"); 
 }
 
-/*twit.stream('statuses/filter', {track:'nomaspoderalpoder, nomaspoderapp'},function(stream){
+twit.stream('statuses/filter', {track:'nomaspoderalpoder, nomaspoderapp'},function(stream){
 	if(stream)
 		stream.on('data', addData);
-});*/
-/*
+});
+
 twit.search('#Nomaspoderapp OR #nomaspoderalpoder',{count:6}, function(data){
 	//console.log(data);
 	if(data && data.statuses)
 		data.statuses.forEach(addData);
-});*/
+});
